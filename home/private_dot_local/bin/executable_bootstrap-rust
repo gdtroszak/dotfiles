@@ -1,0 +1,34 @@
+#! /bin/bash
+
+set -eufo pipefail
+
+# Install rust using rustup-init without confirmations or setting PATH.
+#
+# - $CARGO_HOME and $RUSTUP_HOME variables must be set.
+# - $CARGO_HOME/bin must be in $PATH.
+
+source common
+
+if ! is_command_installed curl
+then
+  echo -e "$crossmark Install curl and try again."
+  exit 1
+fi
+
+# Ensure CARGO_HOME and RUSTUP_HOME are set.
+if ! is_variable_set CARGO_HOME || ! is_variable_set RUSTUP_HOME
+then
+  exit 1
+fi
+
+ensure_in_path $CARGO_HOME/bin
+
+# Install rustup if needed.
+if ! is_command_installed rustup
+then
+  echo -e "$gear Installing rustup, rust, cargo, etc..."
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+  echo -e "$checkmark rustup successfully installed at $(which rustup)."
+fi
+
+echo -e "$info $(rustup --version)"

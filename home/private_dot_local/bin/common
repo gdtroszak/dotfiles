@@ -1,0 +1,69 @@
+#! /bin/bash
+
+# Unicode symbols
+checkmark="\xE2\x9C\x94"
+crossmark="\xE2\x9C\x97"
+gear="\xE2\x9A\x99"
+info="\xE2\x84\xB9"
+
+
+# Check if a command is installed.
+#
+# $1 - the name of the command.
+#
+# Examples
+#
+#    is_command_installed curl
+#
+# Returns 0 if command found, 1 if not.
+function is_command_installed() {
+  if command -v $1 &> /dev/null
+  then
+    echo -e "$checkmark $1 already installed at $(which $1)."
+    return 0
+  else
+    echo -e "$crossmark $1 is not installed."
+    return 1
+  fi
+}
+
+
+# Check if a variable is set.
+#
+# $1 - the name of the variable.
+#
+# Examples
+#
+#    is_variable_set MY_VAR
+#
+# Returns 0 if the variable is set, 1 if not.
+function is_variable_set(){
+  if [ -z ${!1+x} ]
+  then
+    echo -e "$crossmark $1 variable must be set"
+    return 1
+  else
+    echo -e "$checkmark $1 variable is set: ${!1}"
+    return 0
+  fi
+}
+
+
+# Ensure a given directory is in PATH.
+#
+# $1 - absolute path of the directory to check.
+#
+# Examples
+#
+#    ensure_in_path /path/to/dir
+#
+# Exits with code 1 if the directory is not in $PATH, otherwise returns 0.
+function ensure_in_path() {
+  if [[ ! ":$PATH" == *":$1:"* ]]
+  then
+    echo -e "$crossmark $1 is not in \$PATH."
+    exit 1
+  else
+    echo -e "$checkmark $1 is in \$PATH."
+  fi
+}

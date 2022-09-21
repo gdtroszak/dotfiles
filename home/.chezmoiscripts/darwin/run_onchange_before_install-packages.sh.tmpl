@@ -1,0 +1,28 @@
+{{ if (eq .chezmoi.os "darwin") -}}
+
+{{ $brews := list
+    "fd"
+    "fzf"
+    "gh"
+    "git"
+    "openssl"
+    "readline"
+    "ripgrep"
+    "sqlite3"
+    "tmux"
+    "xz"
+    "zlib"
+    "tcl-tk"
+-}}
+
+#! /bin/bash
+
+set -eufo pipefail
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+
+{{ range ($brews | sortAlpha | uniq) -}}
+brew "{{ . }}"
+{{ end -}}
+EOF
+{{ end -}}

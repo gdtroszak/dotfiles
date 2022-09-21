@@ -1,0 +1,67 @@
+#! /bin/bash
+
+set -eufo pipefail
+
+# Install pyenv, set a global python version, and install pipx.
+#
+# Note that this will always reset the global python version to the
+# $PYTHON_VERSION specified in this file.
+#
+# - $PYENV_ROOT must be set.
+# - $PYENV_ROOT/bin must be in $PATH.
+
+
+source common
+
+PYTHON_VERSION=3.10.7
+
+# Ensure gh is installed.
+if ! is_command_installed gh
+then
+  echo -e "$crossmark Install gh and try again."
+  exit 1
+fi
+
+# Ensure $PYENV_ROOT is set.
+if ! is_variable_set PYENV_ROOT
+then
+  exit 1
+fi
+
+ensure_in_path $PYENV_ROOT/bin
+
+# Install pyenv if needed.
+pyenv_installed=false
+if ! is_command_installed pyenv
+then
+  echo -e "$gear Installing pyenv..."
+  mkdir -p $PYENV_ROOT
+  gh repo clone pyenv/pyenv $PYENV_ROOT
+  eval "$(pyenv init --path)"
+  pyenv_installed=true
+fi
+echo -e "$info pyenv version: $(pyenv --version)"
+
+# Install $PYTHON_VERSION globally if not already.
+if [ ! $(pyenv global) == $PYTHON_VERSION ]
+then
+  echo -e "$gear Installing Python $PYTHON_VERSION globally..."
+  pyenv install -s $PYTHON_VERSION
+  pyenv global $PYTHON_VERSION
+else
+  echo -e "$checkmark Global Python already installed at $(which python)."
+fi
+echo -e "$info Global Python version: $(pyenv global)"
+
+# Install pipx if needed.
+if ! is_command_installed pipx
+then
+  echo -e "$gear Installing pipx..."
+  python -m pip install --user pipx
+fi
+echo -e "$info pipx version: $(pipx --version)"
+
+if [ "$pyenv_installed" = true ]
+then
+  exec "$SHELL"
+fi

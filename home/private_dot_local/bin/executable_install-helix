@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Install helix from source.
+#
+# This only installs helix if its source doesn't exist in $SRC_HOME.
+
+mkdir -p $SRC_HOME
+HELIX_SRC=$SRC_HOME/helix
+
+# Only install if it hasn't already been installed.
+if [[ ! -d $HELIX_SRC ]]
+then
+    git clone https://github.com/helix-editor/helix $HELIX_SRC
+    cd $HELIX_SRC
+    cargo install --path helix-term
+
+    # Symlink helix runtime directory.
+    # We can't just do the entire directory because grammars are generated at runtime.
+    mkdir -p $HELIX_RUNTIME
+    ln -sF $HELIX_SRC/runtime/queries $HELIX_RUNTIME/queries
+    ln -sF $HELIX_SRC/runtime/themes $HELIX_RUNTIME/themes
+    ln -sF $HELIX_SRC/runtime/tutor $HELIX_RUNTIME/tutor
+fi

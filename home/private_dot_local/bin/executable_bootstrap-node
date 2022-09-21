@@ -1,0 +1,62 @@
+#! /bin/bash
+
+set -eufo pipefail
+
+# Install fnm and setup a "global" node.
+#
+# A "global" version of node is just a directory whose `node_modules/bin` dir is
+# in $PATH. This directory is specified by the $NPM_GLOBAL_DIR env var and must be
+# set to run this script.
+#
+# "global" node packages may be installed by cd'ing to $NPM_GLOBAL_DIR and
+# running `npm install ...`, but consider using the `npm-global` script for this
+# instead.
+#
+# - $NPM_GLOBAL_DIR must be set.
+# - $HOME/.local/bin must be in $PATH.
+
+source common
+
+# Global node version.
+NODE_VERSION=16.17.1
+
+if ! is_command_installed curl
+then
+  echo -e "$crossmark Install curl and try again."
+  exit 1
+fi
+
+if ! is_variable_set NPM_GLOBAL_DIR
+then
+  exit 1
+fi
+
+ensure_in_path $NPM_GLOBAL_DIR/node_modules/.bin
+
+fnm_installed=false
+if ! is_command_installed fnm
+then
+  echo -e "$gear Installing fnm..."
+  # On macOS, this just installs using homebrew, so the install-dir is ignored.
+  curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir $HOME/.local/bin --skip-shell
+  eval "$(fnm env --shell=bash)"
+  echo -e "$checkmark fnm successfully installed at $(which fnm)."
+  fnm_installed=true
+  
+  # Install default node version
+  fnm install $NODE_VERSION
+  fnm default $NODE_VERSION
+  
+  # Setup directory for global node packages if it doesn't exist.
+  # This avoids the need to use -g.
+  # See https://github.com/Schniz/fnm/issues/109 for more details.
+  mkdir -p $NPM_GLOBAL_DIR
+fi
+
+echo -e "$info fnm version: $(fnm --version)"
+echo -e "$info node version: $(fnm current)"
+
+if [ "$fnm_installed" = true ]
+then
+  exec "$SHELL"
+fi

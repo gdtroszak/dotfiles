@@ -1,0 +1,41 @@
+### XDG SPEC ###
+#
+# Attempt to adhere to the XDG spec when it's possible. It's not always
+# possible, so in some cases configure programs to adhere to parts of it.
+#
+# Resources:
+# - https://wiki.archlinux.org/title/XDG_Base_Directory
+
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
+export XDG_CACHE_HOME=$HOME/.cache
+
+# Set a directory to store source code that needs to be compiled.
+# Not technically part of the XDG spec, but related.
+export SRC_HOME=$HOME/.local/src
+
+# zsh
+export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+
+# helix
+export HELIX_RUNTIME=$XDG_DATA_HOME/helix/runtime
+
+# less
+export LESSHISTFILE=$XDG_STATE_HOME/less/history
+export LESSKEY=$XDG_CONFIG_HOME/less/keys
+
+# node
+export NODE_REPL_HISTORY=$XDG_DATA_HOME/node_repl_history
+
+# npm
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+# Create a directory specifically for global node package installs.
+export NPM_GLOBAL_DIR=$XDG_DATA_HOME/npmbin
+
+# pyenv
+export PYENV_ROOT=$XDG_DATA_HOME/pyenv
+
+# rust
+export CARGO_HOME=$XDG_DATA_HOME/cargo
+export RUSTUP_HOME=$XDG_DATA_HOME/rustup

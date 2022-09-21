@@ -1,0 +1,52 @@
+{{ if (eq .chezmoi.os "linux") -}}
+
+{{ $sudo := "sudo " -}}
+{{ if eq .chezmoi.username "root" -}}
+{{   $sudo = "" -}}
+{{ end -}}
+
+{{ $packages := list
+    "build-essential"
+    "curl"
+    "fd-find"
+    "fzf"
+    "gh"
+    "git"
+    "libbz2-dev"
+    "libncursesw5-dev"
+    "libffi-dev"
+    "liblzma-dev"
+    "libreadline-dev"
+    "libsqlite3-dev"
+    "libssl-dev"
+    "libxml2-dev"
+    "libxmlsec1-dev"
+    "llvm"
+    "make"
+    "ripgrep"
+    "tk-dev"
+    "tmux"
+    "unzip"
+    "vim"
+    "wget"
+    "xz-utils"
+    "zlib1g-dev"
+    "zsh"
+-}}
+
+#! /bin/bash
+
+set -eufo pipefail
+
+# Add gh repository.
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | {{ $sudo }}dd of=/etc/apt/trusted.gpg.d/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/trusted.gpg.d/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | {{ $sudo }}tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+
+{{ $sudo }}apt update
+{{ $sudo }}apt install -y {{ $packages | join " " }}
+
+# Link fdfind to fd
+mkdir -p ~/.local/bin
+ln -fs $(which fdfind) ~/.local/bin/fd
+
+{{ end -}}
