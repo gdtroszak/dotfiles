@@ -10,7 +10,7 @@ Install `curl`, run
 sh -c "$(curl -fsLS https://chezmoi.io/get)" -- init --apply gdtroszak
 ```
 
-then follow the prompts that come up.
+then follow the prompts.
 
 
 ## Usage
