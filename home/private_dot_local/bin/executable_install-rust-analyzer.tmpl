@@ -1,17 +1,14 @@
 #! /bin/bash
 
-VERSION="2022-09-26"
-BASE_URL="https://github.com/rust-lang/rust-analyzer/releases/download"
-
-BIN_DIR=$HOME/.local/bin
+bin_dir=$HOME/.local/bin
 
 {{ if (eq .chezmoi.os "darwin") -}}
-RELEASE_URL=$BASE_URL/$VERSION/rust-analyzer-aarch64-apple-darwin.gz
+glob_pattern="*aarch64*darwin*"
 {{ else if (eq .chezmoi.os "linux") -}}
-RELEASE_URL=$BASE_URL/$VERSION/rust-analyzer-aarch64-unknown-linux-gnu.gz
+glob_pattern="*aarch64*linux*"
 {{ end -}}
 
-curl -fsSL $RELEASE_URL > rust-analyzer.gz
-gunzip rust-analyzer.gz
-mv rust-analyzer $BIN_DIR/rust-analyzer
-chmod +x $BIN_DIR/rust-analyzer
+gh release download --repo rust-lang/rust-analyzer --pattern $glob_pattern
+gunzip $glob_pattern
+mv $glob_pattern $bin_dir/rust-analyzer
+chmod +x $bin_dir/rust-analyzer
