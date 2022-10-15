@@ -1,16 +1,13 @@
 #! /bin/bash
 
-VERSION="2022-09-13"
-BASE_URL="https://github.com/artempyanykh/marksman/releases/download"
-
-BIN_DIR=$HOME/.local/bin
+bin_dir=$HOME/.local/bin
 
 {{ if (eq .chezmoi.os "darwin") -}}
-RELEASE_URL=$BASE_URL/$VERSION/marksman-macos
+glob_pattern="*macos"
 {{ else if (eq .chezmoi.os "linux") -}}
-RELEASE_URL=$BASE_URL/$VERSION/marksman-linux
+glob_pattern="*linux"
 {{ end -}}
 
-curl -fsSL $RELEASE_URL > marksman
-mv marksman $BIN_DIR/marksman
-chmod +x $BIN_DIR/marksman
+gh release download --repo artempyanykh/marksman --pattern $glob_pattern
+mv marksman* $bin_dir/marksman
+chmod +x $bin_dir/marksman
