@@ -13,6 +13,7 @@ export PATH=$PYENV_ROOT/bin:$PATH
 # This assumes we're on an arm64 mac.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
 {{- end }}
 
 # State directory for zsh. Dump completions and history there.
