@@ -13,7 +13,7 @@ set -eufo pipefail
 
 source common
 
-PYTHON_VERSION=3.10.7
+PYTHON_VERSION=3.10.9
 
 # Ensure gh is installed.
 if ! is_command_installed gh
