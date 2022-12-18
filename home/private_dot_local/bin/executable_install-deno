@@ -1,0 +1,20 @@
+#! /bin/bash
+
+set -eufo pipefail
+
+source common
+
+if ! is_command_installed curl
+then
+  echo -e "$crossmark Install curl and try again."
+  exit 1
+fi
+
+if ! is_command_installed deno
+then
+  echo -e "$gear Installing deno..."
+  curl -fsSL https://deno.land/install.sh | sudo DENO_INSTALL=$HOME/.local sh
+  echo -e "$checkmark deno successfully installed at $(which deno)."
+fi
+
+echo -e "$info $(deno --version)"
