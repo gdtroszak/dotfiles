@@ -1,4 +1,4 @@
-autoload -U colors && colors
+# autoload -U colors && colors
 
 setopt PROMPT_SUBST
 
@@ -13,16 +13,13 @@ git_prompt_info() {
       git_status=" %F{green}✔%f"
     fi
 
-    echo " (%F{blue}$branch%f$git_status)"
+    echo " (%F{yellow}$branch%f$git_status)"
   fi
 }
 
 set_prompt() {
-  if [[ $EUID -eq 0 ]]; then
-    export PROMPT="%B%F{red}%~$f$(git_prompt_info)"$'\n❯%b '
-  else
-    export PROMPT="%B%F{green}%~%f$(git_prompt_info)"$'\n❯%b '
-  fi
+  export PROMPT="%B%n:%F{blue}%1~/%f$(git_prompt_info) ➜%b "
+  export RPROMPT="[$(date +"%H:%M:%S")]"
 }
 
 # Apply the prompt function before each command
