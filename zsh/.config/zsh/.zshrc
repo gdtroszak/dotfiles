@@ -21,7 +21,6 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
-ZSH_HIGHLIGHT_STYLES[alias]='fg=yellow'
 ZSH_HIGHLIGHT_STYLES[autodirectory]='fg=blue'
 ZSH_HIGHLIGHT_STYLES[path]='fg=blue'
 
