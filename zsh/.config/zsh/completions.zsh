@@ -1,3 +1,6 @@
+# Remove homebrew git's completions because zsh's are better
+rm -f $HOMEBREW_PREFIX/share/zsh/site-functions/_git
+
 # Load completion system
 autoload -U compinit
 compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump"
@@ -15,6 +18,7 @@ zstyle ':completion:*' cache-path "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompcach
 # Completion menu settings
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+
 
 # Include hidden files in completions
 _comp_options+=(globdots)
