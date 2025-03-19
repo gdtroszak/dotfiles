@@ -8,7 +8,7 @@ export XDG_STATE_HOME=$HOME/.local/state
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 
 # fzf
-export FZF_DEFAULT_OPTS="--height 40% --layout reverse --border top"
+export FZF_DEFAULT_OPTS="--height 40% --layout reverse --border"
 
-# zsh-z
-export ZSHZ_DATA=$XDG_DATA_HOME/z
+# zoxide
+export _ZO_DATA_DIR=$XDG_DATA_HOME/zoxide

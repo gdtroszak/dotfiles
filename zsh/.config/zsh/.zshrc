@@ -1,9 +1,16 @@
-# Created by Zap installer
+# Ensure necessary directories exist
+mkdir -p \
+  "$XDG_CONFIG_HOME" \
+  "$XDG_CACHE_HOME" \
+  "$XDG_DATA_HOME" \
+  "$XDG_STATE_HOME" \
+  "$ZDOTDIR" \
+  "$_ZO_DATA_DIR"
+
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 autoload -Uz plug
 
 # plugins
-plug "agkozak/zsh-z"
 plug "Aloxaf/fzf-tab"
 plug "zap-zsh/fzf"
 plug "zap-zsh/vim"
@@ -37,5 +44,7 @@ setopt INTERACTIVE_COMMENTS
 
 # load completions
 plug "$ZDOTDIR/completions.zsh"
+
+eval "$(zoxide init zsh)"
 
 zle_highlight=('paste:none')
