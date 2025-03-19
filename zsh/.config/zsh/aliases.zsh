@@ -1,11 +1,13 @@
 # config
-alias ea="$EDITOR $ZDOTDIR/aliases.zsh"
-alias ra="source $ZDOTDIR/aliases.zsh"
+alias ea='$EDITOR $ZDOTDIR/aliases.zsh'
+alias ra='source $ZDOTDIR/aliases.zsh'
  
 # navigation
 alias l='ls --color=auto -la'
 
 # git
+alias ga='git add'
+alias gaa='git add --all'
 alias gb='git branch'
 alias gba='git branch --all'
 alias gbd='git branch --delete'
@@ -16,7 +18,6 @@ alias gf='git fetch'
 alias gl='git pull'
 alias gp='git push'
 alias gst='git status'
-alias gaa='git add --all'
 
 # tmux
 alias ta='tmux attach -t'
