@@ -3,7 +3,7 @@ mkdir -p \
   "$XDG_CONFIG_HOME" \
   "$XDG_CACHE_HOME" \
   "$XDG_DATA_HOME" \
-  "$XDG_STATE_HOME" \
+  "$XDG_STATE_HOME/less" \
   "$ZDOTDIR" \
   "$_ZO_DATA_DIR"
 
