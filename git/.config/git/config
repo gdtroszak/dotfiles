@@ -1,0 +1,13 @@
+[user]
+	name = Greg Troszak
+	email = greg@gregtroszak.me
+[credential "https://github.com"]
+	helper = 
+	helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !gh auth git-credential
+[init]
+	defaultBranch = main
+[pager]
+	branch = false
