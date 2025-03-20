@@ -14,7 +14,7 @@ SHELL_SESSIONS_DISABLE=1
 
 # fzf
 export FZF_DEFAULT_OPTS='
-  --height 40%
+  --height ~40%
   --color gutter:-1
   --layout reverse
   --border
