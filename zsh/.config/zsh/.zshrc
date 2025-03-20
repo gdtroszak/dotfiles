@@ -17,19 +17,13 @@ plug "zap-zsh/vim"
 plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-syntax-highlighting"
 
+
 # source
 plug "$ZDOTDIR/aliases.zsh"
 plug "$ZDOTDIR/colors.zsh"
 plug "$ZDOTDIR/exports.zsh"
 plug "$ZDOTDIR/history.zsh"
 plug "$ZDOTDIR/prompt.zsh"
-
-# ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
-
-# (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
-# ZSH_HIGHLIGHT_STYLES[path_prefix]=none
-# ZSH_HIGHLIGHT_STYLES[autodirectory]='fg=blue'
-# ZSH_HIGHLIGHT_STYLES[path]='fg=blue'
 
 # keybindings
 bindkey '^ ' autosuggest-accept
@@ -41,10 +35,11 @@ setopt GLOB_DOTS
 setopt EXTENDED_GLOB
 setopt NOMATCH
 setopt INTERACTIVE_COMMENTS
+zle_highlight=('paste:none')
+zstyle ':fzf-tab:*' use-fzf-default-opts yes
 
 # load completions
 plug "$ZDOTDIR/completions.zsh"
 
 eval "$(zoxide init zsh)"
 
-zle_highlight=('paste:none')

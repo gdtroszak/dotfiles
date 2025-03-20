@@ -13,7 +13,14 @@ export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 SHELL_SESSIONS_DISABLE=1
 
 # fzf
-export FZF_DEFAULT_OPTS="--height 40% --layout reverse --border"
+export FZF_DEFAULT_OPTS='
+  --height 40%
+  --color gutter:-1
+  --layout reverse
+  --border
+  --highlight-line
+  --no-scrollbar'
 
 # zoxide
 export _ZO_DATA_DIR=$XDG_DATA_HOME/zoxide
+export _ZO_FZF_OPTS=$FZF_DEFAULT_OPTS
