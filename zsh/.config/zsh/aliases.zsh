@@ -3,6 +3,7 @@ alias ea='$EDITOR $ZDOTDIR/aliases.zsh'
 alias ra='source $ZDOTDIR/aliases.zsh'
  
 # navigation
+alias cd='z'
 alias l='ls --color=auto -la'
 
 # git
