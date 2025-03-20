@@ -24,6 +24,7 @@ plug "$ZDOTDIR/colors.zsh"
 plug "$ZDOTDIR/exports.zsh"
 plug "$ZDOTDIR/history.zsh"
 plug "$ZDOTDIR/prompt.zsh"
+plug "$ZDOTDIR/secrets.zsh"
 
 # keybindings
 bindkey '^ ' autosuggest-accept
