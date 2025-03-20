@@ -1,0 +1,21 @@
+theme = 'everforest_dark'
+
+[editor]
+cursorline = true
+line-number = 'relative'
+scrolloff = 8
+
+[editor.statusline]
+right = ['file-type', 'selections', 'position']
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+
+[keys.insert]
+S-tab = "unindent"
+
+[editor.lsp]
+display-inlay-hints = false
