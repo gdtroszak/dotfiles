@@ -6,6 +6,8 @@ export XDG_STATE_HOME=$HOME/.local/state
 
 # zsh
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+# disable macOS shell sessions
+SHELL_SESSIONS_DISABLE=1
 
 # fzf
 export FZF_DEFAULT_OPTS="--height 40% --layout reverse --border"
