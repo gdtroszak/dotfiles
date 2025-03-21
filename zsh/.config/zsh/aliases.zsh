@@ -11,6 +11,9 @@ alias cd='z'
 alias l='eza --group-directories-first --git -la'
 alias tree='l --tree'
 
+# brew
+alias bb='brew bundle'
+
 # git
 alias ga='git add'
 alias gaa='git add --all'
