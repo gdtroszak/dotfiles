@@ -4,6 +4,9 @@ export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 
+# brew
+export HOMEBREW_BUNDLE_FILE=$XDG_CONFIG_HOME/brew/Brewfile
+
 # less
 export LESSHISTFILE=$XDG_STATE_HOME/less/history
 
