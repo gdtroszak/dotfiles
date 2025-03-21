@@ -4,7 +4,8 @@ alias ra='source $ZDOTDIR/aliases.zsh'
  
 # navigation
 alias cd='z'
-alias l='ls --color=auto -la'
+alias l='eza --group-directories-first --git -la'
+alias tree='l --tree'
 
 # git
 alias ga='git add'
