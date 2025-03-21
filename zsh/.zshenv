@@ -14,12 +14,11 @@ SHELL_SESSIONS_DISABLE=1
 
 # fzf
 export FZF_DEFAULT_OPTS='
-  --height ~40%
+  --height ~50%
   --color gutter:-1
   --layout reverse
   --border
-  --highlight-line
-  --no-scrollbar'
+  --highlight-line'
 
 # zoxide
 export _ZO_DATA_DIR=$XDG_DATA_HOME/zoxide

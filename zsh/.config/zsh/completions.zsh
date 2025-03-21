@@ -16,9 +16,12 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompcache"
 
 # Completion menu settings
-zstyle ':completion:*' menu select
+zstyle ':completion:*' menu no
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*:git-checkout:*' sort false
 
+# fzf-tab styling needs to be configured independent of fzf
+zstyle ':fzf-tab:*' fzf-flags --color=gutter:-1 --border --height=~50%
 
 # Include hidden files in completions
 _comp_options+=(globdots)

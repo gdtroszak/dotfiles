@@ -37,7 +37,6 @@ setopt EXTENDED_GLOB
 setopt NOMATCH
 setopt INTERACTIVE_COMMENTS
 zle_highlight=('paste:none')
-zstyle ':fzf-tab:*' use-fzf-default-opts yes
 
 # load completions
 plug "$ZDOTDIR/completions.zsh"
