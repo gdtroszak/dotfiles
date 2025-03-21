@@ -9,7 +9,10 @@ alias renv='source ~/.zshenv'
 # navigation
 alias cd='z'
 alias l='eza --group-directories-first --git -la'
-alias tree='l --tree'
+alias lt='l -I .git --tree --level 1'
+alias lt2='lt --level 2'
+alias lt3='lt --level 3'
+alias lt4='lt --level 4'
 
 # brew
 alias bb='brew bundle'
