@@ -1,6 +1,10 @@
 # config
 alias ea='$EDITOR $ZDOTDIR/aliases.zsh'
 alias ra='source $ZDOTDIR/aliases.zsh'
+alias erc='$EDITOR $ZDOTDIR/.zshrc'
+alias rrc='source $ZDOTDIR/.zshrc'
+alias eenv='$EDITOR ~/.zshenv'
+alias renv='source ~/.zshenv'
  
 # navigation
 alias cd='z'
