@@ -1,12 +1,3 @@
-# Ensure necessary directories exist
-mkdir -p \
-  "$XDG_CONFIG_HOME" \
-  "$XDG_CACHE_HOME" \
-  "$XDG_DATA_HOME" \
-  "$XDG_STATE_HOME/less" \
-  "$ZDOTDIR" \
-  "$_ZO_DATA_DIR"
-
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 autoload -Uz plug
 

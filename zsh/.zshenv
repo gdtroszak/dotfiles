@@ -9,6 +9,7 @@ export HOMEBREW_BUNDLE_FILE=$XDG_CONFIG_HOME/brew/Brewfile
 
 # less
 export LESSHISTFILE=$XDG_STATE_HOME/less/history
+mkdir -p $XDG_STATE_HOME/less
 
 # zsh
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
@@ -25,4 +26,5 @@ export FZF_DEFAULT_OPTS='
 
 # zoxide
 export _ZO_DATA_DIR=$XDG_DATA_HOME/zoxide
+mkdir -p $_ZO_DATA_DIR
 export _ZO_FZF_OPTS=$FZF_DEFAULT_OPTS
