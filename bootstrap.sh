@@ -55,6 +55,4 @@ stow tmux
 
 echo "Dotfiles stowed successfully."
 
-source $HOME/.zshenv
-source $ZDOTDIR/.zprofile
-source $ZDOTDIR/.zshrc
+exec zsh -i
