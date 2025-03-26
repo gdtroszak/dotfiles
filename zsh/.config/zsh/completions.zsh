@@ -1,6 +1,13 @@
 # Remove homebrew git's completions because zsh's are better
 rm -f $HOMEBREW_PREFIX/share/zsh/site-functions/_git
 
+# User completion directory
+zsh_completion_dir="${ZDOTDIR:-$HOME/.config/zsh}/completions"
+mkdir -p "$zsh_completion_dir"
+
+# Add user completions to fpath
+fpath=($zsh_completion_dir $fpath)
+
 # Load completion system
 autoload -U compinit
 compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump"

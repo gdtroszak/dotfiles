@@ -17,6 +17,11 @@ plug "$ZDOTDIR/history.zsh"
 plug "$ZDOTDIR/prompt.zsh"
 plug "$ZDOTDIR/secrets.zsh"
 
+# stowed
+for file in "$ZDOTDIR/.zshrc.d/"*.zsh(N); do
+  plug "$file"
+done
+
 # keybindings
 bindkey '^ ' autosuggest-accept
 
