@@ -18,7 +18,7 @@ git_prompt_info() {
 }
 
 set_prompt() {
-  export PROMPT="%B%n:%F{blue}%1~/%f$(git_prompt_info) ➜%b "
+  export PROMPT="%B%n@%m:%F{blue}%1~/%f$(git_prompt_info) ➜%b "
   export RPROMPT="[$(date +"%H:%M:%S")]"
 }
 
