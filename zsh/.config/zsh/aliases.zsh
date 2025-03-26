@@ -7,7 +7,6 @@ alias eenv='$EDITOR ~/.zshenv'
 alias renv='source ~/.zshenv'
  
 # navigation
-alias cd='z'
 alias l='eza --group-directories-first --git -la'
 alias lt='l -I .git --tree --level 1'
 alias lt2='lt --level 2'
