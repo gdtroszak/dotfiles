@@ -16,6 +16,7 @@ fi
 if ! command -v cargo >/dev/null 2>&1; then
   echo "[rust.zsh] cargo not found, installing stable toolchain..."
   rustup install stable
+  rustup component add rust-analyzer
 fi
 
 # Completion directory
