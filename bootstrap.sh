@@ -33,6 +33,7 @@ brew install \
   tmux \
   fzf \
   stow \
+  ripgrep \
   zoxide
  
 echo "Done installing Homebrew packages."
