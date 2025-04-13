@@ -48,7 +48,7 @@ ZDOTDIR=$XDG_CONFIG_HOME/zsh
 mkdir -p $XDG_CACHE_HOME
 mkdir -p $XDG_DATA_HOME
 mkdir -p $XDG_STATE_HOME
-# This also make $XDG_CONFIG_HOME.
+# This also makes $XDG_CONFIG_HOME.
 mkdir -p $ZDOTDIR
 
 stow zsh
