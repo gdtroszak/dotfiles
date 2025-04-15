@@ -11,8 +11,8 @@ if ! is_installed fzf; then
 fi
 
 # Ensure ripgrep is installed
-if ! is_installed ripgrep; then
-  echo "[zsh.zsh] ripgrep not found, installing..."
+if ! is_installed rg; then
+  echo "[zsh.zsh] rg not found, installing..."
   brew install ripgrep
 fi
 
