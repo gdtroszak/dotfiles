@@ -2,8 +2,18 @@
 
 set -euo pipefail
 
-# Source useful functions
-. "$(dirname "$0")/zsh/.config/zsh/functions.zsh"
+REPO_URL="https://github.com/gdtroszak/dotfiles.git"
+CLONE_DIR="${HOME}/.dotfiles"
+CONFIG_ZSH_PATH="${CLONE_DIR}/zsh/.config/zsh"
+
+if [ ! -d "$CLONE_DIR" ]; then
+  echo "Cloning dotfiles into $CLONE_DIR..."
+  git clone "$REPO_URL" "$CLONE_DIR"
+else
+  echo "Dotfiles repo already exists at $CLONE_DIR."
+fi
+
+. "$CONFIG_ZSH_PATH/functions.zsh"
 
 if [[ "$(uname)" != "Darwin" ]]; then
   echo "Error: This bootstrap script currently only supports macOS." >&2
