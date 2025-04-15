@@ -1,7 +1,7 @@
 # Ensure neovim is installed
 if ! is_installed nvim; then
   echo "[nvim.zsh] nvim not found, installing..."
-  brew install nvim
+  brew install neovim
 fi
 
 # Ensure luarocks is installed
