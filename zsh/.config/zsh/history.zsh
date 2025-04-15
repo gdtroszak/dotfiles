@@ -14,3 +14,7 @@ setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
 setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
+
+# Make the zsh state directory if necessary.
+HISTDIR="$(dirname "$HISTFILE")"
+[ ! -d "$HISTDIR" ] && mkdir -p "$HISTDIR"
