@@ -2,8 +2,20 @@
 
 set -eu
 
+if [ "$(uname)" != "Darwin" ]; then
+  echo "Error: This bootstrap script currently only supports macOS." >&2
+  exit 1
+fi
+
+REPO_URL="https://github.com/gdtroszak/dotfiles.git"
+CLONE_DIR="${HOME}/.dotfiles"
+CONFIG_ZSH_PATH="${CLONE_DIR}/zsh/.config/zsh"
+
+. "$CONFIG_ZSH_PATH/functions.zsh"
+
 if ! is_installed brew ; then
   echo "Installing Homebrew..."
+  sudo -v
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
   # Make Homebrew available in this shell session
@@ -19,22 +31,11 @@ else
   echo "Homebrew already installed."
 fi
 
-REPO_URL="https://github.com/gdtroszak/dotfiles.git"
-CLONE_DIR="${HOME}/.dotfiles"
-CONFIG_ZSH_PATH="${CLONE_DIR}/zsh/.config/zsh"
-
 if [ ! -d "$CLONE_DIR" ]; then
   echo "Cloning dotfiles into $CLONE_DIR..."
   git clone "$REPO_URL" "$CLONE_DIR"
 else
   echo "Dotfiles repo already exists at $CLONE_DIR."
-fi
-
-. "$CONFIG_ZSH_PATH/functions.zsh"
-
-if [ "$(uname)" != "Darwin" ]; then
-  echo "Error: This bootstrap script currently only supports macOS." >&2
-  exit 1
 fi
 
 echo "Installing core packages with Homebrew..."
