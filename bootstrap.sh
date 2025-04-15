@@ -54,8 +54,8 @@ ZDOTDIR=$XDG_CONFIG_HOME/zsh
 # Create XDG directories (and some others)
 mkdir -p "$XDG_CACHE_HOME" "$XDG_DATA_HOME" "$XDG_STATE_HOME" "$ZDOTDIR"
 
-stow zsh
-stow tmux
+stow -d "$CLONE_DIR" zsh
+stow -d "$CLONE_DIR" tmux
 
 echo "Dotfiles stowed successfully."
 
