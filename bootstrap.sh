@@ -9,11 +9,8 @@ fi
 
 REPO_URL="https://github.com/gdtroszak/dotfiles.git"
 CLONE_DIR="${HOME}/.dotfiles"
-CONFIG_ZSH_PATH="${CLONE_DIR}/zsh/.config/zsh"
 
-. "$CONFIG_ZSH_PATH/functions.zsh"
-
-if ! is_installed brew ; then
+if ! command -v brew >/dev/null 2>&1 ; then
   echo "Installing Homebrew..."
   sudo -v
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
