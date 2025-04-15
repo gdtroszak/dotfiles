@@ -2,6 +2,23 @@
 
 set -eu
 
+if ! is_installed brew ; then
+  echo "Installing Homebrew..."
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  # Make Homebrew available in this shell session
+  if [ -x /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  elif [ -x /usr/local/bin/brew ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+  else
+    echo "Error: brew was installed but not found in expected locations." >&2
+    exit 1
+  fi
+else
+  echo "Homebrew already installed."
+fi
+
 REPO_URL="https://github.com/gdtroszak/dotfiles.git"
 CLONE_DIR="${HOME}/.dotfiles"
 CONFIG_ZSH_PATH="${CLONE_DIR}/zsh/.config/zsh"
@@ -18,23 +35,6 @@ fi
 if [ "$(uname)" != "Darwin" ]; then
   echo "Error: This bootstrap script currently only supports macOS." >&2
   exit 1
-fi
-
-if ! is_installed brew ; then
-  echo "Installing Homebrew..."
-  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-  # Make Homebrew available in this shell session
-  if [ -x /opt/homebrew/bin/brew ]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-  elif [ -x /usr/local/bin/brew ]; then
-    eval "$(/usr/local/bin/brew shellenv)"
-  else
-    echo "Error: brew was installed but not found in expected locations." >&2
-    exit 1
-  fi
-else
-  echo "Homebrew already installed."
 fi
 
 echo "Installing core packages with Homebrew..."
