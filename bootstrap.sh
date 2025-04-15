@@ -27,18 +27,15 @@ else
   echo "Homebrew already installed."
 fi
 
-echo "Installing packages with Homebrew..."
+echo "Installing core packages with Homebrew..."
 brew update
 
 brew install \
   git \
   zsh \
-  fzf \
   stow \
-  ripgrep \
-  zoxide
  
-echo "Done installing Homebrew packages."
+echo "Done installing core Homebrew packages."
 
 XDG_CACHE_HOME=$HOME/.cache
 XDG_CONFIG_HOME=$HOME/.config
