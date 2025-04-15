@@ -33,7 +33,6 @@ brew update
 brew install \
   git \
   zsh \
-  tmux \
   fzf \
   stow \
   ripgrep \
