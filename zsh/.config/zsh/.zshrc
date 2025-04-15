@@ -3,7 +3,7 @@ local ZAP_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zap"
 # Install zap if necessary
 if [ ! -d "$ZAP_DIR" ]; then
   echo "Installing Zap..."
-  zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
+  zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) -k --branch release-v1
   echo "Zap installed."
 fi
 

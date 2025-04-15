@@ -12,7 +12,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/gdtroszak/dotfiles/main/bo
 
 It does the following.
 
-- Clones this repo to `${HOME}/.dotfiles`.
+- Clones this repo to `$HOME/.dotfiles`.
 - Installs homebrew and some core packages.
 - Ensures that all of the necessary
   [XDG](https://specifications.freedesktop.org/basedir-spec/latest/) directories
@@ -20,5 +20,5 @@ It does the following.
 - Stows the `zsh` and `tmux` configurations.
 - Sources `.zshenv`, `.zprofile`, and `.zshrc`.
 
-After running the script, run `stow [package]; rrc` to install additional
-packages.
+After running the script, `cd $HOME/.dotfiles` and run `stow [package]; rrc` to
+install additional packages.
