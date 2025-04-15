@@ -2,12 +2,15 @@
 
 set -euo pipefail
 
+# Source useful functions
+. "$(dirname "$0")/zsh/.config/zsh/functions.zsh"
+
 if [[ "$(uname)" != "Darwin" ]]; then
   echo "Error: This bootstrap script currently only supports macOS." >&2
   exit 1
 fi
 
-if ! command -v brew &>/dev/null; then
+if ! is_installed brew ; then
   echo "Installing Homebrew..."
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 

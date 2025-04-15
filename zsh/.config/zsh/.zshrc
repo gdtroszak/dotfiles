@@ -10,6 +10,7 @@ plug "zsh-users/zsh-syntax-highlighting"
 
 
 # source
+plug "$ZDOTDIR/functions.zsh"
 plug "$ZDOTDIR/aliases.zsh"
 plug "$ZDOTDIR/colors.zsh"
 plug "$ZDOTDIR/exports.zsh"

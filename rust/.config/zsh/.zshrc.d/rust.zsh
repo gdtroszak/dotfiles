@@ -4,7 +4,7 @@ export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
 export PATH="$CARGO_HOME/bin:$PATH"
 
 # Ensure rustup is installed (using official script)
-if ! command -v rustup >/dev/null 2>&1; then
+if ! is_installed rustup; then
   echo "[rust.zsh] rustup not found, installing with official script..."
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | \
     CARGO_HOME="$CARGO_HOME" \
@@ -13,7 +13,7 @@ if ! command -v rustup >/dev/null 2>&1; then
 fi
 
 # Ensure stable toolchain is installed
-if ! command -v cargo >/dev/null 2>&1; then
+if ! is_installed cargo; then
   echo "[rust.zsh] cargo not found, installing stable toolchain..."
   rustup install stable
   rustup component add rust-analyzer
