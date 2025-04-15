@@ -8,7 +8,7 @@ My personal dotfiles.
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/gdtroszak/dotfiles/main/bootstrap.sh)"
 ```
 
-> ⚠️This script currently supports **macOS only**.
+> ⚠️ This script currently supports **macOS only**.
 
 It does the following.
 
