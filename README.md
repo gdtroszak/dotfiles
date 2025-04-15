@@ -4,14 +4,21 @@ My personal dotfiles.
 
 ## Usage
 
-This will only work on macOS for now.
+```sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/gdtroszak/dotfiles/main/bootstrap.sh)"
+```
 
-1. Clone this repo to your home directory.
-2. Navigate into the repo.
-3. Run `./bootstrap.sh`. This does a few things:
-   - Installs homebrew and some necessary packages for the bare-minimum zsh setup.
-   - Ensures that all of the necessary [XDG](https://specifications.freedesktop.org/basedir-spec/latest/)
-     directories are created.
-   - Stows the `zsh` and `tmux` configurations.
-   - Sources `.zshenv`, `.zprofile`, and `.zshrc`.
-4. Run `stow [whatever]` to use additional configurations.
+> ⚠️This script currently supports **macOS only**.
+
+It does the following.
+
+- Clones this repo to `${HOME}/.dotfiles`.
+- Installs homebrew and some core packages.
+- Ensures that all of the necessary
+  [XDG](https://specifications.freedesktop.org/basedir-spec/latest/) directories
+  are created.
+- Stows the `zsh` and `tmux` configurations.
+- Sources `.zshenv`, `.zprofile`, and `.zshrc`.
+
+After running the script, run `stow [package]; rrc` to install additional
+packages.
