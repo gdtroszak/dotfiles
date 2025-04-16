@@ -20,5 +20,5 @@ It does the following.
 - Stows the `zsh` and `tmux` configurations.
 - Sources `.zshenv`, `.zprofile`, and `.zshrc`.
 
-After running the script, `cd $HOME/.dotfiles` and run `stow [package]; rrc` to
-install additional packages.
+After running the script, `cd $HOME/.dotfiles`
+and run `stow [package]; rrc` to install additional packages.
