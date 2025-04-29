@@ -89,3 +89,10 @@ rm public.gpg secret.gpg secsub.gpg
 ```
 
 They should now only exist on your secure offline storage.
+
+## Useful commands
+
+```sh
+# Print the GPG key ID in ASCII armor format.
+gpg --armor --export [key ID]
+```
