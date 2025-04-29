@@ -11,3 +11,5 @@
 	defaultBranch = main
 [pager]
 	branch = false
+[commit]
+	gpgsign = true
