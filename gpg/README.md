@@ -90,6 +90,27 @@ rm public.gpg secret.gpg secsub.gpg
 
 They should now only exist on your secure offline storage.
 
+## Adding a user to the key
+
+Retrieve your secret key and secret subkeys from secure storage.
+
+Import the secret key
+then edit the key.
+
+```sh
+gpg --import secret.gpg
+gpg --edit-key [key ID]
+```
+
+At the `gpg>` prompt type `adduid` and hit enter.
+
+Fill out the information.
+
+At the `gpg>` prompt type `save` and hit enter.
+
+Then repeat the steps to [remove the secret keys](#remove-the-secret-keys-from-the-gpg-instance)
+and [re-import the subkeys](#re-import-the-secret-subkeys).
+
 ## Useful commands
 
 ```sh
