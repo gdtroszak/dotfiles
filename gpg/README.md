@@ -108,7 +108,9 @@ Fill out the information.
 
 At the `gpg>` prompt type `save` and hit enter.
 
-Then repeat the steps to [remove the secret keys](#remove-the-secret-keys-from-the-gpg-instance)
+Then repeat the steps to
+[backup](#backup),
+[remove the secret keys](#remove-the-secret-keys-from-the-gpg-instance),
 and [re-import the subkeys](#re-import-the-secret-subkeys).
 
 ## Useful commands
