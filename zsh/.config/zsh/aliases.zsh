@@ -13,9 +13,6 @@ alias lt2='lt --level 2'
 alias lt3='lt --level 3'
 alias lt4='lt --level 4'
 
-# brew
-alias bb='brew bundle'
-
 # git
 alias ga='git add'
 alias gaa='git add --all'
@@ -39,8 +36,3 @@ alias gl='git pull'
 alias gp='git push'
 alias grbi='git rebase --interactive'
 alias gst='git status'
-
-# tmux
-alias ta='tmux attach -t'
-alias tl='tmux ls'
-alias ts='tmux new -s'
