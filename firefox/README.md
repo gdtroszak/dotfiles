@@ -3,8 +3,7 @@
 ## Usage
 
 ```sh
-stow firefox 
-source $ZDOTDIR/.zshrc
+stow firefox; rrc
 ```
 
 ## Features

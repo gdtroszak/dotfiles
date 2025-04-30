@@ -5,8 +5,7 @@
 ## Usage
 
 ```sh
-stow tmux 
-source $ZDOTDIR/.zshrc
+stow tmux; rrc
 ```
 
 ## Features

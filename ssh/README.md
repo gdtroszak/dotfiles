@@ -3,8 +3,7 @@
 ## Usage
 
 ```sh
-stow ssh
-source $ZDOTDIR/.zshrc
+stow ssh; rrc
 ```
 
 ## Features

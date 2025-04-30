@@ -3,8 +3,7 @@
 ## Usage
 
 ```sh
-stow deno 
-source $ZDOTDIR/.zshrc
+stow deno; rrc
 ```
 
 ## Features

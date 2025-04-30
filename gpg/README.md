@@ -3,8 +3,7 @@
 ## Usage
 
 ```sh
-stow gpg
-source $ZDOTDIR/.zshrc
+stow gpg; rrc
 ```
 
 ## Features

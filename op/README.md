@@ -3,8 +3,7 @@
 ## Usage
 
 ```sh
-stow op 
-source $ZDOTDIR/.zshrc
+stow op; rrc
 ```
 
 ## Features

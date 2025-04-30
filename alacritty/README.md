@@ -3,8 +3,7 @@
 ## Usage
 
 ```sh
-stow alacritty 
-source $ZDOTDIR/.zshrc
+stow alacritty; rrc
 ```
 
 ## Features

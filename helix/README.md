@@ -3,8 +3,7 @@
 ## Usage
 
 ```sh
-stow helix 
-source $ZDOTDIR/.zshrc
+stow helix; rrc
 ```
 
 ## Features

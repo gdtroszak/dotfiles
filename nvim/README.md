@@ -3,8 +3,7 @@
 ## Usage
 
 ```sh
-stow nvim 
-source $ZDOTDIR/.zshrc
+stow nvim; rrc
 ```
 
 ## Features

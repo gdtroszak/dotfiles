@@ -5,8 +5,7 @@
 ## Usage
 
 ```sh
-stow git 
-source $ZDOTDIR/.zshrc
+stow git; rrc
 ```
 
 ## Features

@@ -3,8 +3,7 @@
 ## Usage
 
 ```sh
-stow rust
-source $ZDOTDIR/.zshrc
+stow rust; rrc
 ```
 
 ## Features
