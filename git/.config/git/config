@@ -1,6 +1,7 @@
 [user]
 	name = Greg Troszak
 	email = greg@gregtroszak.me
+	signingkey = 82CDFC940AC874EB0495CB6800B5215C0BB1A98D
 [credential "https://github.com"]
 	helper = 
 	helper = !gh auth git-credential
