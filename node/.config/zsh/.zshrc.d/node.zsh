@@ -23,3 +23,5 @@ if ! asdf plugin list | grep -q '^nodejs$'; then
   echo "[node.zsh] Installing asdf nodejs plugin..."
   asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git >/dev/null
 fi
+
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
