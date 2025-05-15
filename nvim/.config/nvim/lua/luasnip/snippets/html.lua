@@ -23,13 +23,17 @@ return {
     <link rel="stylesheet" href="/style.css">
   </head>
   <body>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/now">Now</a>
-      <a href="/slashes">/</a>
-    </nav>
-    <main>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/now/">Now</a></li>
+          <li><a href="/slashes/">/</a></li>
+        </ul>
+      </nav>
       <h1>{}</h1>
+    </header>
+    <main>
       {}
     </main>
     <footer>
