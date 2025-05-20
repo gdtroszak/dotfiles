@@ -19,7 +19,7 @@ git_prompt_info() {
 
 set_prompt() {
   export PROMPT="%B%n@%m:%F{blue}%1~/%f$(git_prompt_info) ➜%b "
-  export RPROMPT="[$(date +"%H:%M:%S")]"
+  export RPROMPT="[%D{%H:%M:%S}]"
 }
 
 # Apply the prompt function before each command
