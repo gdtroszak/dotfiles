@@ -24,7 +24,7 @@ return {
   </head>
   <body>
     <header>
-      <nav>
+      <nav aria-label="Main navigation">
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/now/">Now</a></li>
