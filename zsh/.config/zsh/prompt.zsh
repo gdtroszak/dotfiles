@@ -18,7 +18,13 @@ git_prompt_info() {
 }
 
 set_prompt() {
-  export PROMPT="%B%n@%m:%F{blue}%1~/%f$(git_prompt_info) ➜%b "
+  local dir_path="%1~"
+  if [[ "$PWD" == "/" ]]; then
+    dir_path="/"
+  else
+    dir_path="%1~/"
+  fi
+  export PROMPT="%B%n@%m:%F{blue}$dir_path%f$(git_prompt_info) ➜%b "
   export RPROMPT="[%D{%H:%M:%S}]"
 }
 
