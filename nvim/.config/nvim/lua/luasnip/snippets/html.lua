@@ -21,6 +21,7 @@ return {
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" sizes="any" href="/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/style.css">
+    <link rel="alternate" type="application/rss+xml" title="Greg Troszak" href="/rss.xml">
   </head>
   <body>
     <header>
