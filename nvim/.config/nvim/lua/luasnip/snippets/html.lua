@@ -39,7 +39,7 @@ return {
     </main>
     <footer>
       <small>
-        Have thoughts? Say <a href="mailto:hello@gregtroszak.me">hello</a>.
+        Subscribe via <a href="/rss.xml">RSS</a> or say <a href="mailto:hello@gregtroszak.me">hello</a>.
       </small>
     </footer>
   </body>
