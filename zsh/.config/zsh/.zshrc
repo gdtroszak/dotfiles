@@ -48,4 +48,3 @@ zle_highlight=('paste:none')
 plug "$ZDOTDIR/completions.zsh"
 
 eval "$(zoxide init zsh)"
-
