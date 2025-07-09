@@ -13,3 +13,5 @@ alias lt2='lt --level 2'
 alias lt3='lt --level 3'
 alias lt4='lt --level 4'
 
+# notes
+alias tn='$EDITOR ~/development/personal/notes/inbox/$(date +%F).md'
