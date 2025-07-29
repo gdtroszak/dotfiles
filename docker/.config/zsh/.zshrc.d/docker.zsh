@@ -11,3 +11,9 @@ if ! is_installed docker; then
   echo "[docker.zsh] docker not found, installing..."
   brew install docker
 fi
+
+# Ensure docker-compose is installed
+if ! is_installed docker-compose; then
+  echo "[docker.zsh] docker-compose not found, installing..."
+  brew install docker-compose
+fi
