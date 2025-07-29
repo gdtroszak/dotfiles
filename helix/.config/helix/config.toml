@@ -4,6 +4,7 @@ theme = 'everforest_dark'
 cursorline = true
 line-number = 'relative'
 scrolloff = 8
+end-of-line-diagnostics = "hint"
 
 [editor.statusline]
 right = ['file-type', 'selections', 'position']
@@ -19,3 +20,6 @@ S-tab = "unindent"
 
 [editor.lsp]
 display-inlay-hints = false
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
