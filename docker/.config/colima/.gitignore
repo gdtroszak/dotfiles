@@ -1,0 +1,5 @@
+*
+# Track these
+!.gitignore
+!default/
+!default/colima.yaml
