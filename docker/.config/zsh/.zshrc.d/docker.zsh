@@ -12,6 +12,12 @@ if ! is_installed docker; then
   brew install docker
 fi
 
+# Ensure docker-buildx is installed
+if ! is_installed docker-buildx; then
+  echo "[docker.zsh] docker-buildx not found, installing..."
+  brew install docker-buildx
+fi
+
 # Ensure docker-compose is installed
 if ! is_installed docker-compose; then
   echo "[docker.zsh] docker-compose not found, installing..."
