@@ -1,6 +1,6 @@
 {
-	"auths": {},
-	"cliPluginsExtraDirs": [
-		"/opt/homebrew/lib/docker/cli-plugins"
+  "auths": {},
+  "cliPluginsExtraDirs": [
+    "/opt/homebrew/lib/docker/cli-plugins"
 	]
 }
